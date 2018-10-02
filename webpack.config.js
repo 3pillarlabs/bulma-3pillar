@@ -27,7 +27,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin([ docsPath ], { verbose: true }),
     new MiniCssExtractPlaugin({
-      filename: 'css/default-[hash].min.css'
+      filename: 'css/bulma-3pillar-default.min.css'
     }),
     new HtmlWebpackPlugin({
       template: 'src/index.html',
