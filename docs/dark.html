@@ -6,7 +6,13 @@
   <meta name="viewport" content="width=device-width, minimum-scale=1.0">
   <title>3Pillar Themes for Bulma</title>
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" />
-<link href="css/bulma-3pillar-default.min.css" rel="stylesheet"></head>
+  <link href="css/dark/bulma-3pillar.min.css" rel="stylesheet" data-active-style="true" />
+  <style>
+    .hero .container {
+      width: 95%;
+    }
+  </style>
+</head>
 
 <body class="theme-page">
   <section class="hero is-primary">
@@ -24,10 +30,10 @@
               <div class="navbar-dropdown is-boxed">
                 <div class="columns">
                   <div class="column">
-                    <a class="navbar-item " href="https://3pillarlabs.github.io/bulma-3pillar/"> Default </a>
+                    <a class="navbar-item" href="/default.html" data-theme-name="default"> Default </a>
                   </div>
                   <div class="column">
-                    <a class="navbar-item " href="https://3pillarlabs.github.io/bulma-3pillar/dark"> Dark </a>
+                    <a class="navbar-item" href="/dark.html" data-theme-name="dark"> Dark </a>
                   </div>
                 </div>
               </div>
@@ -60,8 +66,8 @@
           3Pillar typography and colors for Bulma
         </h2>
         <p>
-          <a class="button is-primary is-inverted" href="/docs/css/bulma-3pillar-default.min.css" target="_blank">Download</a>
-          <a class="button is-dark" href="https://github.com/3pillarlabs/bulma-3pillar/tree/master/src" target="_blank"
+          <a id="download-minified" class="button is-primary is-inverted" href="/docs/css/dark/bulma-3pillar.min.css" target="_blank">Download</a>
+          <a id="download-source" class="button is-dark" href="https://github.com/3pillarlabs/bulma-3pillar/tree/master/src/dark" target="_blank"
             title="Download from Github">
             <span class="icon"> <i class="fa fa-github"> </i> </span>
           </a>
@@ -6130,11 +6136,6 @@
         $('html').removeClass('is-clipped');
         $(this).parent().removeClass('is-active');
       });
-      $('.theme-switcher').change(function (e) {
-        if (e.target.value) {
-          window.location.href = '/bulmaswatch/' + e.target.value;
-        }
-      });
 
       // Get all "navbar-burger" elements
       var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
@@ -6160,6 +6161,6 @@
     });
   </script>
 
-<script type="text/javascript" src="js/bundle.js"></script></body>
+</body>
 
 </html>

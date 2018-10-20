@@ -7,10 +7,13 @@ const MiniCssExtractPlaugin = require('mini-css-extract-plugin');
 const docsPath = path.resolve(__dirname, 'docs')
 
 module.exports = {
-  entry: './src/index.js',
+  entry: {
+    default: './src/default/default.js',
+    dark: './src/dark/dark.js'
+  },
   output: {
     path: docsPath,
-    filename: 'js/bundle.js'
+    filename: 'js/[name].js'
   },
   module: {
     rules: [{
@@ -27,11 +30,21 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin([ docsPath ], { verbose: true }),
     new MiniCssExtractPlaugin({
-      filename: 'css/bulma-3pillar-default.min.css'
+      filename: 'css/[name]/bulma-3pillar.min.css'
     }),
     new HtmlWebpackPlugin({
       template: 'src/index.html',
-      alwaysWriteToDisk: true
+      theme: 'default',
+      alwaysWriteToDisk: true,
+      filename: 'default.html',
+      inject: false
+    }),
+    new HtmlWebpackPlugin({
+      template: 'src/index.html',
+      theme: 'dark',
+      alwaysWriteToDisk: true,
+      filename: 'dark.html',
+      inject: false
     }),
     new HtmlWebpackHdPlugin({
       outputPath: docsPath

@@ -1,0 +1,191 @@
+body {
+  color: $white-ter;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-family-heading;
+}
+
+.hero {
+  background-color: $grey-dark;
+}
+
+.box {
+  box-shadow: none;
+  background-color: $grey-dark;
+}
+
+.button {
+  color: $white;
+
+  &.is-active,
+  &.is-focused,
+  &:active,
+  &:focus {
+    box-shadow: 0 0 0 2px rgba($button-focus-border-color, 0.5);
+  }
+  @each $name, $pair in $colors {
+    $color: nth($pair, 1);
+    $color-invert: nth($pair, 2);
+
+    &.is-#{$name} {
+      &.is-hovered,
+      &:hover {
+        background-color: lighten($color, 7.5%);
+      }
+
+      &.is-active,
+      &.is-focused,
+      &:active,
+      &:focus {
+        border-color: $color;
+        box-shadow: 0 0 0 2px rgba($color, 0.5);
+      }
+    }
+  }
+}
+
+.label {
+  color: $grey-lighter;
+}
+
+.notification {
+  background-color: $grey-dark;
+}
+
+.card {
+  $card-border-color: lighten($grey-darker, 5);
+  box-shadow: none;
+  border-color: $card-border-color;
+  border-style: solid;
+  background-color: $grey-darker;
+
+  .card-header {
+    box-shadow: none;
+    background-color: rgba($black-bis, 0.2);
+  }
+
+  .card-footer {
+    background-color: rgba($black-bis, 0.2);
+  }
+
+  .card-footer,
+  .card-footer-item {
+    border-color: $card-border-color;
+  }
+}
+
+.notification {
+  @each $name, $pair in $colors {
+    $color: nth($pair, 1);
+    $color-invert: nth($pair, 2);
+
+    &.is-#{$name} {
+      a:not(.button) {
+        color: $color-invert;
+      }
+    }
+  }
+}
+
+.modal-card-body {
+  background-color: $grey-darker;
+}
+
+.modal-card-foot,
+.modal-card-head {
+  border-color: $grey-dark;
+}
+
+.message-header {
+  background-color: $grey-dark;
+  color: $white;
+}
+
+.message-body {
+  border-color: $grey-dark;
+}
+
+.navbar {
+
+  &.is-transparent {
+    background: none;
+  }
+
+  &.is-primary {
+    .navbar-dropdown {
+      a.navbar-item.is-active {
+        background-color: $link;
+      }
+    }
+  }
+
+  @include touch {
+    .navbar-menu {
+      background-color: $navbar-background-color;
+    }
+  }
+}
+
+.panel-tabs {
+  a {
+    &.is-active {
+      border-bottom-color: $link-active;
+    }
+  }
+}
+
+.panel-block {
+  &:hover {
+    color: $link-hover;
+
+    .panel-icon {
+      color: $link-hover;
+    }
+  }
+
+  &.is-active {
+    .panel-icon {
+      color: $link-active;
+    }
+  }
+}
+
+.tabs {
+  &.is-boxed {
+    li.is-active a {
+      background-color: darken($grey-darker, 4);
+    }
+  }
+}
+
+.hero {
+  // Colors
+  @each $name, $pair in $colors {
+    $color: nth($pair, 1);
+    $color-invert: nth($pair, 2);
+
+    &.is-#{$name} {
+      .navbar {
+        .navbar-dropdown {
+          .navbar-item:hover {
+            background-color: $navbar-dropdown-item-hover-background-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+input, textarea {
+  background-color: $grey-lighter !important;
+  &::placeholder {
+    color: $grey !important;
+  }
+}
+
+.control {
+  .icon {
+    color: $orange !important;
+  }
+}
