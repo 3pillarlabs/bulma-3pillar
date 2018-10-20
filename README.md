@@ -5,8 +5,7 @@ Bulma themes with 3Pillar Global colors.
 
 ## Light Theme
 
-- https://3pillarlabs.github.io/bulma-3pillar/
-- https://3pillarlabs.github.io/bulma-3pillar/default
+- https://3pillarlabs.github.io/bulma-3pillar/default.html
 
 ### HTML
 
@@ -23,7 +22,7 @@ Include directly in your HTML template -
 
 ## Dark Theme
 
-https://3pillarlabs.github.io/bulma-3pillar/dark
+https://3pillarlabs.github.io/bulma-3pillar/dark.html
 
 ### HTML
 
