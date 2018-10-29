@@ -2,7 +2,8 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackHdPlugin = require('html-webpack-harddisk-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const MiniCssExtractPlaugin = require('mini-css-extract-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CleanCssWebpackPlugin = require('clean-css-webpack-plugin');
 
 const docsPath = path.resolve(__dirname, 'docs')
 
@@ -20,7 +21,7 @@ module.exports = {
       test: /\.scss$/,
       use: [
         'style-loader',
-        MiniCssExtractPlaugin.loader,
+        MiniCssExtractPlugin.loader,
         'css-loader',
         'postcss-loader',
         'sass-loader'
@@ -29,8 +30,8 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin([ docsPath ], { verbose: true }),
-    new MiniCssExtractPlaugin({
-      filename: 'css/[name]/bulma-3pillar.min.css'
+    new MiniCssExtractPlugin({
+      filename: 'css/[name]/bulma-3pillar.css'
     }),
     new HtmlWebpackPlugin({
       template: 'src/index.html',
@@ -48,6 +49,12 @@ module.exports = {
     }),
     new HtmlWebpackHdPlugin({
       outputPath: docsPath
+    }),
+    new CleanCssWebpackPlugin({
+      minifyOptions: {
+        sourceMap: true,
+        rebaseTo: docsPath
+      }
     })
   ],
   devServer: {

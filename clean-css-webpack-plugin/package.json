@@ -1,0 +1,14 @@
+{
+  "name": "clean-css-webpack-plugin",
+  "version": "0.0.1",
+  "description": "Webpack plugin to minimize CSS with sourceMap support",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sayantam Dey <sayantam@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "clean-css": "^4.2.1"
+  }
+}
