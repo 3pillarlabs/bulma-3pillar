@@ -13,17 +13,17 @@ module.exports = (assetPath, source, options) => {
   const assetName = path.basename(assetFile, assetExtn);
   const minifiedAssetFile = `${assetName}.min${assetExtn}`;
   const minifiedAssetPath = path.join(assetDir, minifiedAssetFile);
-  const cleanCssOptions = { ...options, output: minifiedAssetFile };
+  const cleanCssOptions = {...options, output: minifiedAssetFile};
 
   return new Promise((resolve, reject) => {
     const minified = new CleanCss(cleanCssOptions).minify({
-      [assetFile]: { styles: source }
+      [assetFile]: {styles: source},
     });
 
     if (minified.errors && minified.errors.length > 0) {
       const error = new Error('Failed to clean-css');
       Object.defineProperty(error, 'minifyErrors', {
-        value: minified.errors.map(e => new Error(e))
+        value: minified.errors.map((e) => new Error(e)),
       });
       reject(error);
       return;
@@ -31,7 +31,7 @@ module.exports = (assetPath, source, options) => {
 
     let warnings = null;
     if (minified.warnings && minified.warnings.length > 0) {
-      warnings = minified.warnings.map(w => new Error(w));
+      warnings = minified.warnings.map((w) => new Error(w));
     }
 
     const stats = minified.stats;
@@ -51,4 +51,4 @@ module.exports = (assetPath, source, options) => {
 
     resolve({warnings, styles, sourceMap, stats, mapPath, minifiedAssetPath});
   });
-}
+};
