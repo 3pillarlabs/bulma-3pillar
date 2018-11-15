@@ -24,9 +24,11 @@
     "url": "https://github.com/3pillarlabs/bulma-3pillar/issues"
   },
   "homepage": "https://github.com/3pillarlabs/bulma-3pillar#readme",
+  "dependencies": {
+    "bulma": "^0.7.1"
+  },
   "devDependencies": {
     "autoprefixer": "^9.1.5",
-    "bulma": "^0.7.1",
     "clean-webpack-plugin": "^0.1.19",
     "css-loader": "^1.0.0",
     "html-webpack-harddisk-plugin": "^0.2.0",
