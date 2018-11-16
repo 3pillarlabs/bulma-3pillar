@@ -1,5 +1,5 @@
 # bulma-3pillar
-Bulma themes with 3Pillar Global colors. These are not official themes, but derivative works. 
+Bulma themes with 3Pillar Global colors. These are not official themes, but derivative works.
 
 # How it works
 
@@ -17,8 +17,21 @@ Include directly in your HTML template -
 
 ### NPM
 
-<mark>TBD</mark>
+```bash
+npm install git+ssh://git@github.com:3pillarlabs/bulma-3pillar.git
+```
 
+To import just the theme variables, in your SASS file:
+
+```scss
+@import "./node_modules/bulma-3pillar/src/default/theme";
+```
+
+To import the light Bulma theme:
+
+```scss
+@import "./node_modules/bulma-3pillar/src/default/default";
+```
 
 ## Dark Theme
 
@@ -34,7 +47,21 @@ Include directly in your HTML template -
 
 ### NPM
 
-<mark>TBD</mark>
+```bash
+npm install git+ssh://git@github.com:3pillarlabs/bulma-3pillar.git
+```
+
+To import just the theme variables, in your SASS file:
+
+```scss
+@import "./node_modules/bulma-3pillar/src/dark/theme";
+```
+
+To import the dark Bulma theme:
+
+```scss
+@import "./node_modules/bulma-3pillar/src/dark/dark";
+```
 
 # LICENSE
 
