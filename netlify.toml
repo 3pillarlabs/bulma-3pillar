@@ -2,4 +2,4 @@
   from = "/*"
   to = "/default.html"
   status = 404
-  force = false # COMMENT: ensure that we always redirect
+  force = false # COMMENT: only redirect on 404 Not Found
