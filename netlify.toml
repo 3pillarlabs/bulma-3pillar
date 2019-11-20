@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "/*"
+  to = "/default.html"
+  status = 404
+  force = false # COMMENT: only redirect on 404 Not Found
