@@ -1,5 +1,5 @@
 [[redirects]]
-  from = “/*”
-  to = “/default.html“
+  from = "/*"
+  to = "/default.html"
   status = 404
   force = true # COMMENT: ensure that we always redirect
